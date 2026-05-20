@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:todoapp}
+    username: ${DB_USER:todouser}
+    password: ${DB_PASSWORD:todopass}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+server:
+  port: ${SERVER_PORT:8080}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:c2VjcmV0LWtleS1mb3ItdG9kby1hcHAtandrLWF0LWxlYXN0LTI1Ni1iaXRz}
+    expiration: ${JWT_EXPIRATION:86400000}  # 24h en ms
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+logging:
+  level:
+    com.todoapp: INFO
+    org.springframework.security: WARN
