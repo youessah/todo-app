@@ -1,0 +1,8 @@
+docker_image: "audreyyouessah/todo-app-backend:latest"
+app_port: 8080
+db_host: "todoapp-db.ck1qywa4ge3l.us-east-1.rds.amazonaws.com"
+db_port: 5432
+db_name: "todoapp"
+db_user: "todouser"
+db_password: "TodoApp2024!"
+jwt_secret: "c2VjcmV0LWtleS1mb3ItdG9kby1hcHAtandrLWF0LWxlYXN0LTI1Ni1iaXRz"

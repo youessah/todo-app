@@ -1,0 +1,7 @@
+---
+- name: Déployer Todo App Backend
+  hosts: backend
+  gather_facts: yes
+
+  roles:
+    - app
